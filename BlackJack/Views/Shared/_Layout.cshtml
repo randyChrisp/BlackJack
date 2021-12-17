@@ -1,6 +1,4 @@
-﻿@inject IGame  game;
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -16,15 +14,12 @@
         </header>
 
         <main role="main">
-            @if (TempData.Keys.Contains("message"))
-            {
-                <h4 class="bg-@TempData["background"] text-white p-2">@TempData["message"]</h4>
-            }
+            <my-temp-message />
             @RenderBody()
         </main>
 
         <footer>
-            <h4 class="bg-light p-4">Total Winnings: @game.Player.TotalWinnings</h4>
+            <vc:winnings-display></vc:winnings-display>
         </footer>
     </div>
 </body>
